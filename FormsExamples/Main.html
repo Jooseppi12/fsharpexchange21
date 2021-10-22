@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${Title}</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <style>
+        /* Sticky footer styles */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+		body > nav, body > div {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			flex-direction: column;
+			margin: auto;
+		}
+		nav {
+		    margin-bottom: 50px;
+        }
+		.error {
+            border-radius: 4px;
+            background-color: red;
+            color: white;
+            padding: 4px;
+		}
+		.simpleForm {
+		    max-width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Static navbar -->
+    <nav>
+        <ul ws-hole="MenuBar"></ul>
+    </nav>
+    <div ws-replace="Body">
+        <div class="simpleForm" ws-template="SimpleForm">
+            <input type="text" placeholder="Username" ws-var="Username" />
+            <input type="text" placeholder="Password" ws-var="Password" />
+            <button ws-onclick="Trigger">Send</button>
+            <div ws-hole="Errors"></div>
+        </div>
+    </div>
+    <script ws-replace="scripts"></script>
+</body>
+</html>
